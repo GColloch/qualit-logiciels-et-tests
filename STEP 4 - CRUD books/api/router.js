@@ -6,4 +6,16 @@ export default (controlers, app) => {
   app.get('/books/:id', controlers.bookCtrl.getBook);
   app.put('/books/:id', controlers.bookCtrl.updateBook);
   app.delete('/books/:id', controlers.bookCtrl.deleteBook);
+  
+  app.get('/bookings', controlers.booking.listBooking);
+  app.post('/bookings', controlers.booking.createBooking);
+  app.get('/bookings/:id', controlers.booking.getBooking);
+  app.put('/bookings/:id', controlers.booking.updateBooking);
+  app.delete('/bookings/:id', controlers.booking.deleteBooking);
+
+  app.get('/users', controlers.users.listUser);
+  app.post('/users', controlers.users.createUser);
+  app.get('/users/:id', controlers.users.getUser);
+  app.put('/users/:id', controlers.users.updateUser);
+  app.delete('/users/:id', controlers.users.deleteUser);
 }

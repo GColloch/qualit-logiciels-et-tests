@@ -4,6 +4,6 @@ import userRepo from './userRepo.js';
 
 export default (model) => ({
   bookRepo: bookRepo(model.Book),
-  bookingRepo: bookingRepo(model.booking),
-  userRepo: userRepo(model.user)
+  bookingRepo: bookingRepo(model.Booking),
+  userRepo: userRepo(model.User)
 });

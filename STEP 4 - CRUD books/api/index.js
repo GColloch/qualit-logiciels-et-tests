@@ -2,9 +2,7 @@ import Express from 'express';
 import router from './router.js';
 import controlers from './controlers/index.js';
 import repository from './repository/index.js';
-import repository from './repository/bookingRepo.js';
 import model from './model/index.js';
-import model from './model/Booking.js';
 
 const launch = (apiPort) => {
   const app = new Express();
