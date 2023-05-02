@@ -6,7 +6,7 @@ export default class User {
      * @param {String} idUser        - Identifiant de l'utilisateur
      * @param {String} lastName  - Nom de l'utilisateur
      * @param {String} firstName - Prénom de l'utilisateur
-     * @param {String}   birthDate - Date de naissance
+     * @param {String} birthDate - Date de naissance
      * @param {String} address   - Adresse postale
      * @param {String} phone     - Téléphone (mobile ou fixe)
      * @param {String} email     - Email
