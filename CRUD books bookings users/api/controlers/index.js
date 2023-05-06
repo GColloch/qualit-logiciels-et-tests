@@ -7,5 +7,5 @@ export default (repository) => ({
   statusCheck,
   bookCtrl: bookCtrl(repository.bookRepo),
   booking: booking(repository.bookingRepo),
-  users: users(repository.usersRepo)
+  users: users(repository)
 });

@@ -15,7 +15,7 @@ export default (controlers, app) => {
 
   app.get('/users', controlers.users.listUsers);
   app.post('/users', controlers.users.createUser);
-  app.get('/users/:id', controlers.users.getUser);
   app.put('/users/:id', controlers.users.updateUser);
   app.delete('/users/:id', controlers.users.deleteUser);
+  
 }

@@ -1,73 +1,52 @@
-
 export default (User) => {
-    const users = [
-      new User('9782744005084', 'COLLOC\'H', 'Guillaume', '05/09/2001', 'FR', '8 rue saint-Joseph Nantes','guillaumecolloch56@gmail.com'),
-      new User('6374836256472', 'SALAZAR', 'Antonio', '11/02/2003', 'ES', '2 Gran Via Madrid','antonioSalazar@gmail.com'),
-    ];
-  
-    const listUsers = () => {
-      return users;
-    };
-  
-    const createUser = (user) => {
-        users.push(new User(
-          user.id,
-          user.lastName,
-          user.firstName,
-          user.birthDate,
-          user.country,
-          user.address,
-          user.email,
-        ));
-        return user;
-      }
-  
-    const findUser = (id) => {
-      return user.find((user) => user.id === id);
-    }
-  
-    const updateUser = (id, user) => {
-      let foundUserIdx = 0;
-      users.forEach((user, idx) => {
-        if (user.id === id) {
-          foundUserIdx = idx;
-        }
-      });
-      
-      if (foundUserIdx > 0) {
-        users[foundUserIdx] = new User(
-            user.id,
-            user.lastName,
-            user.firstName,
-            user.birthDate,
-            user.country,
-            user.phone,
-            user.email,
-        );
-        return user;
-      }
-  
-      return null;
-    }
-  
-    const deleteUser = (id) => {
-      let deleteUser = null;
-      users.forEach((user, idx) => {
-        if (user.id === id) {
-            deleteUser = Object.assign({}, user);
-            users.splice(idx, 1);
-        }
-      });
-  
-      return deleteUser;
-    }
-  
-    return {
-      listUsers,
-      createUser,
-      findUser,
-      updateUser,
-      deleteUser
-    };
+
+  const users = [
+    new User('q8Qk2TIWK7fi1o8LS1wuw9BLKFv3F8', 'Bar', 'Foo', '1930-05-19', '11 Rue des pissenlit Nantes','+33164782195','foobar@gmail.com'),
+    new User('jndRkqj0gQAU0F4tisxJ2RAkPEzpHi', 'Doe', 'John', '1390-11-04', '45 Rue des coquelicots Paris','+33635931674','johndoe@gmail.com')
+  ]
+
+  const listUsers = () => {
+    return users;
+  }
+
+  const getUserById = (id) => {
+    return users.find((user) => user.id === id);
   };
   
+
+  const createUser = (user) => {
+    users.push(user)
+    return user
+  }
+
+  const deleteUser = (id) => {
+    const index = users.findIndex((user) => user.id === id)
+    if (index !== -1) {
+      return users.splice(index, 1)
+    }
+    return null
+  }
+
+  const updateUser = (userId, userData) => {
+    let foundUserIndex = -1
+    users.forEach((user,index) => {
+      if(user.id === userId){
+        foundUserIndex = index
+      }
+    })
+    if(foundUserIndex > -1){
+      users[foundUserIndex] = userData
+      return users[foundUserIndex]
+    }
+  
+    return null
+  }
+
+  return {
+    listUsers,
+    createUser,
+    deleteUser,
+    updateUser,
+    getUserById
+  }
+}

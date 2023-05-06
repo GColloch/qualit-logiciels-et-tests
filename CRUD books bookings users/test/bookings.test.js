@@ -124,20 +124,19 @@ describe('Bookings', function () {
       done();
     });
   });
-
   it('DELETE /bookings/:id should return a success response', function (done) {
     chai.request(api)
-    .delete('/bookings/5934768367231')
+    .delete('/bookings/9782744005084')
     .end((_, res) => {
       chai.expect(res.statusCode).to.equal(200);
       chai.expect(res.body).to.deep.equal({
         meta: {
           _deleted: {
-            BookingId: '5934768367231',
+            id: '5934768367231',
             rentDate: '23/10/2012',
             returnDate: '03/12/2012',
             genre: 'Thriller',
-            userId: '9782744005084',
+            userId: '9782744005084'
           }
         }
       });

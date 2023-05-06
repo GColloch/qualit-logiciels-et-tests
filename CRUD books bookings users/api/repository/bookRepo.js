@@ -1,4 +1,3 @@
-
 export default (Book) => {
   const books = [
     new Book('9782744005084', 'UML et C++', 'Richard C. Lee, William M. Tepfenhart', 'CampusPress', 'FR', 29.95),
